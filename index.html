@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title> WikiSearch</title>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--Latest Font-Awesome Css-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<script src="https://use.fontawesome.com/aec41715d9.js"></script>
+
+<script type="text/javascript" src="js/javascript.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Playball|Racing+Sans+One" rel="stylesheet">
+
+<style>
+#back{
+	content:"";
+	position: fixed;
+	top:0;
+	right:0;
+	left:0;
+	background: linear-gradient(to bottom right,indigo,blue,indigo);
+	background-size: cover;
+	background-position: bottom;
+	height: 100%;
+	-webkit-filter : blur(3px);
+}
+#wikipic{
+	width:100%;
+	height:100%;
+}
+#wikipic:hover{
+	border-radius: 50%;
+	opacity: 0.5;
+
+	
+}
+
+#main{
+  position: relative;
+  top: 50%;
+  transform: translateY(35%);
+}
+#searchDiv{
+	position: relative;
+
+}
+.search-form .form-group {
+  float: left !important;
+  transition: all 0.35s, border-radius 0s;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  margin-left: 20px;
+}
+.search-form .form-group input.form-control {
+  padding-left: 20px;
+  padding-top: 15px;
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display:block;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  width: 70%;
+  border-radius: 25px;
+  border-color: #fff;
+  background: rgba(255,255,255);
+  color: white;
+
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group i.form-control-feedback {
+  position: absolute;
+  top:7px;
+  right: -1px;
+  z-index: 2;
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 34px;
+  text-align: center;
+  color: blue;
+  left: initial;
+  font-size: 25px;
+}
+#test{
+	color: blue;
+	letter-spacing: 2px;
+	font-weight: bold;
+	font-family: Playball;
+	font-size: 20px;
+}
+#searchBtn{
+	margin-top:20px;
+	border-radius: 25px;
+}
+#title{
+	font-family: Playball;
+	font-size: 5vw;
+	padding: 0px;
+	margin-bottom:7%;
+	top: 0;
+	
+}
+#block{
+	width: 100%;
+	border-radius: 25px;
+}
+#pHeading{
+	text-align: center;
+	border:solid 4px #fff;
+	border-radius: 25px;
+	background:blue;
+	color: #fff;
+	font-family: Playball;
+	text-decoration: none;
+	font-size: 2vw;
+	font-style: bold;
+}
+a:link{
+	color: #fff;
+}
+a.visited:link{
+	color: gray;
+}
+.panel-body{
+	font-family: Playball;
+	font-size: 1.5vw;
+	font-style: bold;
+}
+#random{
+	position: relative;
+}
+h2{
+	position: absolute;
+	top: 0;
+	margin-top: 100px;
+	margin-left: 25%;
+	opacity: 0;
+	width: 60%;
+	height: 100%;
+	font-size: 4vw;
+	font-style: bold;
+	font-family: Playball;
+	color: #fff;
+	}
+.social-icons:hover .fa-free-code-camp:before{
+    color:#fff;
+    border:2px solid;
+    border-color:#33691E;
+    padding:6px;
+    background-color:#33691E;
+    border-radius:10%;
+    transition: .2s ease-in;
+  }
+ #footer{
+  	background-color: rgba(0, 0, 0, 0.4);
+  }
+ .footer {
+  margin-top: 200px;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+</style>
+
+</head>
+<body>
+	<div class="container-fluid" id="back">
+	</div>
+	<div class="container-fluid" id="main">
+		
+		<div class="row">
+			<div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-3 col-xs-offset-1 col-xs-3">
+				<div id="random"><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><img src="images/2000px-Wikipedia-logo-v2-en.svg.png" id="wikipic"></a><h2>Random Search</h2></div>
+			</div>
+			<div class="col-md-8 col-sm-8 col-xs-8" id="searchDiv">
+				<div class="row">
+					<div class="col-md-12">
+					<p id="title">Search on Wikipedia</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<form action="" class="search-form">
+							<div class="form-group has-feedback">
+							<input type="text" id="test" class="form-control" placeholder="Search.....">
+							<i class="fa fa-search form-control-feedback" aria-hidden="true" ></i>
+							<button type="button" id="searchBtn" class="btn btn-primary">search</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row container">
+			<div class="col-md-offset-2 col-md-10">
+				<div id="content">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	 <div class=" footer container-fluid text-center" id="footer">
+    <h3 style="font-family:Courgette,cursive;color: #fff;font-size: 1.3em"><strong>About this page</strong></h3>
+    <p style="font-family:DancingScript;font-size:1em;color: #fff">Design & Coded by Prateek Patel (^!^)...</p><a href="https://www.freecodecamp.com/prateekmedy" id="copyright" class="social-icons"><i class="fa fa-free-code-camp" aria-hidden="true" style="font-size:20px;color:#fff;padding-bottom: 20px"> Free-CodeCamp</i></a>
+  </div> 
+
+
+</body>
+</html>
